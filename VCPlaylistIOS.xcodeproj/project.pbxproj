@@ -14,6 +14,7 @@
 		384FA0641F549DFD00A94A08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384FA0621F549DFD00A94A08 /* LaunchScreen.storyboard */; };
 		384FA06F1F549DFD00A94A08 /* VCPlaylistIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FA06E1F549DFD00A94A08 /* VCPlaylistIOSTests.swift */; };
 		384FA07A1F549DFD00A94A08 /* VCPlaylistIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FA0791F549DFD00A94A08 /* VCPlaylistIOSUITests.swift */; };
+		BDE3CF4A669583F477E972DF /* Pods_VCPlaylistIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF09B6408C60F36805FEBF51 /* Pods_VCPlaylistIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		094EBD01B7157A1BE5DB6CD4 /* Pods-VCPlaylistIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCPlaylistIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VCPlaylistIOS/Pods-VCPlaylistIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		384FA0561F549DFC00A94A08 /* VCPlaylistIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCPlaylistIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		384FA0591F549DFC00A94A08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		384FA05B1F549DFC00A94A08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,9 @@
 		384FA0751F549DFD00A94A08 /* VCPlaylistIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VCPlaylistIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		384FA0791F549DFD00A94A08 /* VCPlaylistIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPlaylistIOSUITests.swift; sourceTree = "<group>"; };
 		384FA07B1F549DFD00A94A08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38F6F7201F55A7ED009D8C61 /* SVP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVP-Bridging-Header.h"; sourceTree = "<group>"; };
+		5EBF7650F7855D491E8699D3 /* Pods-VCPlaylistIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCPlaylistIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-VCPlaylistIOS/Pods-VCPlaylistIOS.release.xcconfig"; sourceTree = "<group>"; };
+		AF09B6408C60F36805FEBF51 /* Pods_VCPlaylistIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VCPlaylistIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE3CF4A669583F477E972DF /* Pods_VCPlaylistIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0564D67358CAC0E99C50A3BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				094EBD01B7157A1BE5DB6CD4 /* Pods-VCPlaylistIOS.debug.xcconfig */,
+				5EBF7650F7855D491E8699D3 /* Pods-VCPlaylistIOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		384FA04D1F549DFC00A94A08 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +96,8 @@
 				384FA06D1F549DFD00A94A08 /* VCPlaylistIOSTests */,
 				384FA0781F549DFD00A94A08 /* VCPlaylistIOSUITests */,
 				384FA0571F549DFC00A94A08 /* Products */,
+				0564D67358CAC0E99C50A3BE /* Pods */,
+				A7FB564C34DD8CF9060A779C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +120,7 @@
 				384FA0601F549DFD00A94A08 /* Assets.xcassets */,
 				384FA0621F549DFD00A94A08 /* LaunchScreen.storyboard */,
 				384FA0651F549DFD00A94A08 /* Info.plist */,
+				38F6F7201F55A7ED009D8C61 /* SVP-Bridging-Header.h */,
 			);
 			path = VCPlaylistIOS;
 			sourceTree = "<group>";
@@ -125,6 +143,14 @@
 			path = VCPlaylistIOSUITests;
 			sourceTree = "<group>";
 		};
+		A7FB564C34DD8CF9060A779C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF09B6408C60F36805FEBF51 /* Pods_VCPlaylistIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 384FA07E1F549DFD00A94A08 /* Build configuration list for PBXNativeTarget "VCPlaylistIOS" */;
 			buildPhases = (
+				BB8B443AF7A05B878674C4BB /* [CP] Check Pods Manifest.lock */,
 				384FA0521F549DFC00A94A08 /* Sources */,
 				384FA0531F549DFC00A94A08 /* Frameworks */,
 				384FA0541F549DFC00A94A08 /* Resources */,
+				F9810F26AC1F43C7F5516762 /* [CP] Embed Pods Frameworks */,
+				6CAE1465E4B0FFB313AD6419 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +285,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CAE1465E4B0FFB313AD6419 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VCPlaylistIOS/Pods-VCPlaylistIOS-resources.sh",
+				"$PODS_CONFIGURATION_BUILD_DIR/Brightcove-Player-Core/BCOVPUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VCPlaylistIOS/Pods-VCPlaylistIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB8B443AF7A05B878674C4BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VCPlaylistIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9810F26AC1F43C7F5516762 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VCPlaylistIOS/Pods-VCPlaylistIOS-frameworks.sh",
+				"${PODS_ROOT}/Brightcove-Player-Core/ios/dynamic/BrightcovePlayerSDK.framework",
+				"${PODS_ROOT}/Brightcove-Player-IMA/ios/BrightcoveIMA.framework",
+				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds/GoogleInteractiveMediaAds.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightcovePlayerSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightcoveIMA.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VCPlaylistIOS/Pods-VCPlaylistIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		384FA0521F549DFC00A94A08 /* Sources */ = {
@@ -415,6 +505,7 @@
 		};
 		384FA07F1F549DFD00A94A08 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 094EBD01B7157A1BE5DB6CD4 /* Pods-VCPlaylistIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PVN9K3KC8B;
@@ -422,12 +513,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.rainville.VCPlaylistIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VCPlaylistIOS/SVP-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		384FA0801F549DFD00A94A08 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EBF7650F7855D491E8699D3 /* Pods-VCPlaylistIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PVN9K3KC8B;
@@ -435,6 +528,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.rainville.VCPlaylistIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VCPlaylistIOS/SVP-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -516,6 +610,7 @@
 				384FA0801F549DFD00A94A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		384FA0811F549DFD00A94A08 /* Build configuration list for PBXNativeTarget "VCPlaylistIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +619,7 @@
 				384FA0831F549DFD00A94A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		384FA0841F549DFD00A94A08 /* Build configuration list for PBXNativeTarget "VCPlaylistIOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +628,7 @@
 				384FA0861F549DFD00A94A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
