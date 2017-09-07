@@ -18,13 +18,16 @@ let kViewControllerIMAVMAPResponseAdTag = "https://pubads.g.doubleclick.net/gamp
 
 class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIPlayerViewDelegate, IMAWebOpenerDelegate {
     let playbackService = BCOVPlaybackService(accountId: kViewControllerAccountID, policyKey: kViewControllerPlaybackServicePolicyKey)!
-    let playbackController :BCOVPlaybackController
+    var playbackController :BCOVPlaybackController
     @IBOutlet weak var videoContainer: UIView!
     
     required init?(coder aDecoder: NSCoder) {
+        playbackController = nil
+        super.init(coder: aDecoder)
         
         let manager = BCOVPlayerSDKManager.shared()!
         
+        /*
         let imaSettings = IMASettings()
         imaSettings.ppid = kViewControllerIMAPublisherID
         imaSettings.language = kViewControllerIMALanguage
@@ -43,6 +46,29 @@ class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIP
         playbackController.delegate = self
         playbackController.isAutoAdvance = true
         playbackController.isAutoPlay = true
+        */
+        
+        //  Converted with Swiftify v1.0.6423 - https://objectivec2swift.com/
+        let imaSettings = IMASettings()
+        imaSettings.ppid = kViewControllerIMAPublisherID
+        imaSettings.language = kViewControllerIMALanguage
+        let renderSettings = IMAAdsRenderingSettings()
+        renderSettings.webOpenerPresentingController = self
+        // var videoContainerView: UIView? = videoView
+        let adsRequestPolicy = BCOVIMAAdsRequestPolicy(vmapAdTagUrl: kViewControllerIMAVMAPResponseAdTag)
+        // var manager = BCOVPlayerSDKManager.shared()
+        playbackController = manager.createIMAPlaybackController(with: imaSettings, adsRenderingSettings: renderSettings, adsRequestPolicy: adsRequestPolicy, adContainer: videoContainer, companionSlots: nil, viewStrategy: nil)
+        playbackController.delegate = self
+        
+        // videoContainer?.addSubview((controller?.view)!)
+        /*
+        var playbackService = BCOVPlaybackService(accountId: kViewControllerAccountID, policyKey: kViewControllerPlaybackServicePolicyKey)
+        playbackService.findVideo(with: kViewControllerVideoID, parameters: nil, completion: {(_ video: BCOVVideo, _ jsonResponse: [AnyHashable: Any], _ error: Error?) -> Void in
+            controller?.videos = [video]
+            controller?.play()
+        })
+        */
+
     }
     
     override func viewDidLoad() {
