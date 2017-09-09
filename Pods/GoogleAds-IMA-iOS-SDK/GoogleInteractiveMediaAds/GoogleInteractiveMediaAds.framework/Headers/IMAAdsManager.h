@@ -185,6 +185,12 @@
 - (void)skip;
 
 /**
+ *  Performs a clickthrough on the advertisement if the UI was successfully disabled via
+ *  AdsRenderingSettings.disableUi.
+ */
+- (void)clicked;
+
+/**
  *  Causes the ads manager to stop the ad and clean its internal state.
  */
 - (void)destroy;

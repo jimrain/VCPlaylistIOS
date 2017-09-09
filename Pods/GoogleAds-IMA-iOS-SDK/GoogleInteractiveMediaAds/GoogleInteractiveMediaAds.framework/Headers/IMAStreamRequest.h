@@ -32,6 +32,11 @@ extern NSString *const kIMAStreamParamCustomParameters;
 extern NSString *const kIMAStreamParamTFCD;
 
 /**
+ *  The ad holiday parameter (dai-ah). This can be set to either 0 or 1.
+ */
+extern NSString *const kIMAStreamParamAdHoliday;
+
+/**
  *  The order variant parameter (dai-ov).
  */
 extern NSString *const kIMAStreamParamOrderVariant;

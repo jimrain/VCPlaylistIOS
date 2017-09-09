@@ -14,7 +14,11 @@ let kViewControllerPlaylistID = "5280100152001"
 
 let kViewControllerIMAPublisherID = "ca-pub-4202951716165137"
 let kViewControllerIMALanguage = "en"
-let kViewControllerIMAVMAPResponseAdTag = "https://pubads.g.doubleclick.net/gampad/ads?sz=320x240&iu=/6390/BabyCenter&cust_params={mediainfo.ad_keys}&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url={document.referrer}&description_url={player.url}&correlator={timestamp}"
+// let kViewControllerIMAVMAPResponseAdTag = "https://pubads.g.doubleclick.net/gampad/ads?sz=320x240&iu=/6390/BabyCenter&cust_params={mediainfo.ad_keys}&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url={document.referrer}&description_url={player.url}&correlator={timestamp}"
+let kViewControllerIMAVMAPResponseAdTag = "https://a71csqxusb.execute-api.us-west-2.amazonaws.com/stable/ads"
+
+// VMAP sample from Google just to see if that would work.
+// let kViewControllerIMAVMAPResponseAdTag = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpreonly&cmsid=496&vid=short_onecue&correlator="
 
 class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIPlayerViewDelegate, IMAWebOpenerDelegate {
     let playbackService = BCOVPlaybackService(accountId: kViewControllerAccountID, policyKey: kViewControllerPlaybackServicePolicyKey)!
@@ -22,7 +26,6 @@ class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIP
     @IBOutlet weak var videoContainer: UIView!
     
     required init?(coder aDecoder: NSCoder) {
-        // playbackController = nil
         super.init(coder: aDecoder)
         
         let manager = BCOVPlayerSDKManager.shared()!
@@ -48,7 +51,6 @@ class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIP
         playbackController.isAutoPlay = true
         */
         
-        //  Converted with Swiftify v1.0.6423 - https://objectivec2swift.com/
         let imaSettings = IMASettings()
         imaSettings.ppid = kViewControllerIMAPublisherID
         imaSettings.language = kViewControllerIMALanguage
@@ -59,15 +61,19 @@ class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIP
         // var manager = BCOVPlayerSDKManager.shared()
         playbackController = manager.createIMAPlaybackController(with: imaSettings, adsRenderingSettings: renderSettings, adsRequestPolicy: adsRequestPolicy, adContainer: videoContainer, companionSlots: nil, viewStrategy: nil)
         playbackController?.delegate = self
+        playbackController?.isAutoAdvance = true
+        playbackController?.isAutoPlay = true
         
         // videoContainer?.addSubview((controller?.view)!)
+        
+        // var playbackService = BCOVPlaybackService(accountId: kViewControllerAccountID, policyKey: kViewControllerPlaybackServicePolicyKey)
         /*
-        var playbackService = BCOVPlaybackService(accountId: kViewControllerAccountID, policyKey: kViewControllerPlaybackServicePolicyKey)
         playbackService.findVideo(with: kViewControllerVideoID, parameters: nil, completion: {(_ video: BCOVVideo, _ jsonResponse: [AnyHashable: Any], _ error: Error?) -> Void in
             controller?.videos = [video]
             controller?.play()
         })
-        */
+    */
+        
 
     }
     
@@ -97,6 +103,8 @@ class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIP
             (video: BCOVVideo?, dict: [AnyHashable:Any]?, error: Error?) in
             if let v = video {
                 self.playbackController?.setVideos([v] as NSFastEnumeration!)
+                self.playbackController?.play()
+                // self.playbackController.setVideos([v])
             } else {
                 print("ViewController Debug - Error retrieving video: %@", error!)
             }

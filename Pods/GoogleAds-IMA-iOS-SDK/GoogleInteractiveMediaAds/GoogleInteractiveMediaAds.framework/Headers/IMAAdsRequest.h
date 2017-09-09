@@ -69,6 +69,12 @@
  */
 @property(nonatomic, copy) NSString *contentTitle;
 
+/*
+ *  Specifies the VAST load timeout in milliseconds for the initial request and any subsequent
+ *  wrappers. This parameter is optional and will override the default timeout.
+ */
+@property(nonatomic) float vastLoadTimeout;
+
 /**
  *  Initializes an ads request instance with the given canned ads response and ad display
  *  container with Picture-in-Picture support. Serial ad requests may reuse the

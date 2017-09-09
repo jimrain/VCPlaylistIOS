@@ -12,7 +12,7 @@
 @protocol IMAVideoDisplay;
 
 /**
- * Data object describing a live stream reqeust.
+ * Data object describing a live stream request.
  */
 
 @interface IMALiveStreamRequest : IMAStreamRequest
@@ -25,12 +25,6 @@
  *  @type {!string}
  */
 @property(nonatomic, copy, readonly) NSString *assetKey;
-
-/**
- *  Whether the SDK should attempt to play a preroll during server side ad insertion.
- *  Defaults to false. This setting is only used for live streams.
- */
-@property(nonatomic) BOOL attemptPreroll;
 
 /**
  *  Initializes a live stream request instance with the given assetKey. Uses the given ad display
