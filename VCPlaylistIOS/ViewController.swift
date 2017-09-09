@@ -18,11 +18,11 @@ let kViewControllerIMAVMAPResponseAdTag = "https://pubads.g.doubleclick.net/gamp
 
 class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIPlayerViewDelegate, IMAWebOpenerDelegate {
     let playbackService = BCOVPlaybackService(accountId: kViewControllerAccountID, policyKey: kViewControllerPlaybackServicePolicyKey)!
-    var playbackController :BCOVPlaybackController
+    var playbackController :BCOVPlaybackController? = nil
     @IBOutlet weak var videoContainer: UIView!
     
     required init?(coder aDecoder: NSCoder) {
-        playbackController = nil
+        // playbackController = nil
         super.init(coder: aDecoder)
         
         let manager = BCOVPlayerSDKManager.shared()!
@@ -58,7 +58,7 @@ class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIP
         let adsRequestPolicy = BCOVIMAAdsRequestPolicy(vmapAdTagUrl: kViewControllerIMAVMAPResponseAdTag)
         // var manager = BCOVPlayerSDKManager.shared()
         playbackController = manager.createIMAPlaybackController(with: imaSettings, adsRenderingSettings: renderSettings, adsRequestPolicy: adsRequestPolicy, adContainer: videoContainer, companionSlots: nil, viewStrategy: nil)
-        playbackController.delegate = self
+        playbackController?.delegate = self
         
         // videoContainer?.addSubview((controller?.view)!)
         /*
@@ -96,7 +96,7 @@ class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIP
         playbackService.findVideo(withVideoID: kViewControllerVideoID, parameters: nil) {
             (video: BCOVVideo?, dict: [AnyHashable:Any]?, error: Error?) in
             if let v = video {
-                self.playbackController.setVideos([v] as NSFastEnumeration!)
+                self.playbackController?.setVideos([v] as NSFastEnumeration!)
             } else {
                 print("ViewController Debug - Error retrieving video: %@", error!)
             }
