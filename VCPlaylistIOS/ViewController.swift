@@ -23,6 +23,8 @@ let kViewControllerIMAVMAPResponseAdTag = "https://a71csqxusb.execute-api.us-wes
 class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIPlayerViewDelegate, IMAWebOpenerDelegate {
     let playbackService = BCOVPlaybackService(accountId: kViewControllerAccountID, policyKey: kViewControllerPlaybackServicePolicyKey)!
     var playbackController :BCOVPlaybackController? = nil
+    var playerView :BCOVPUIPlayerView? = nil
+    
     @IBOutlet weak var videoContainer: UIView!
     
     required init?(coder aDecoder: NSCoder) {
@@ -87,13 +89,13 @@ class ViewController: UIViewController, BCOVPlaybackControllerDelegate, BCOVPUIP
         
         // Create and configure Control View
         let controlsView = BCOVPUIBasicControlView.withVODLayout()
-        let playerView = BCOVPUIPlayerView.init(playbackController: playbackController, options: options, controlsView: controlsView)!
+        playerView = BCOVPUIPlayerView.init(playbackController: playbackController, options: options, controlsView: controlsView)!
         
-        playerView.delegate = self
-        playerView.frame = videoContainer.bounds
-        playerView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        playerView?.delegate = self
+        playerView?.frame = videoContainer.bounds
+        playerView?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        videoContainer.addSubview(playerView)
+        videoContainer.addSubview(playerView!)
         
         requestContentFromPlaybackService()
     }
